@@ -239,7 +239,7 @@ int main(int argc,char *argv[])
 	filter.create_laplacian_of_gaussian_filter(100.4f);
 	double avg_time=0;
 	try{
-		Img_IO<pixel_T> img_io("F9_03_2_1_GFP_001.tif");
+		Img_IO<pixel_T> img_io("img_001.tif");
 		Tensor<DEVICE_GPU,pixel_T> *img_gpu=img_io.create_gpu_tensor();
 		int fourcc = VideoWriter::fourcc('M','J','P','G');
 		Video_IO<pixel_T,count_T> video_out;
@@ -277,11 +277,11 @@ int main(int argc,char *argv[])
 			timer.start();
 			if(i<10)
 			{
-				img_io.load_img("F9_03_2_1_GFP_00"+to_string(i)+".tif");
+				img_io.load_img("img"+to_string(i)+".tif");
 			}
 			else
 			{
-				img_io.load_img("F9_03_2_1_GFP_0"+to_string(i)+".tif");
+				img_io.load_img("img"+to_string(i)+".tif");
 			}
 			img_io.refresh_gpu();
 			img_gpuc=*img_gpu;
