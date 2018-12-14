@@ -7,7 +7,7 @@ One of the core features of FImgP, is its functional programming capabilities, a
 ```
 struct mult_add
 {
-  static __forceinline__ float_3 operator()(float_3 p1,float_3 p2,float mval)
+  __forceinline__ __host__ __device__ float_3 operator()(float_3 p1,float_3 p2,float mval)
   {
       float_3 result;
       result[0]=p1[0]*mval+p2[0];
